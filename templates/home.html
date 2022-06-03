@@ -1,0 +1,35 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}! <a href="{% url 'logout' %}">Log Out</a>
+<div class="section">
+    <div class="pageitem">
+        <div class="col">
+            <h2>About Me</h2>
+            <img src="https://loremflickr.com/320/240/man" alt>
+            <p>I like pets.  I like dogs and cats as pets!</p>
+        </div>
+    </div>
+    <div class="pageitem">
+        <div class="col">
+            <h2>Dogs</h2>
+            <img src="https://loremflickr.com/320/240/dog" alt>
+            <p>Dogs make good pets</p>
+        </div>
+        <div class="col">
+            <h2>Cats</h2>
+            <img src="https://loremflickr.com/320/240/cats" alt>
+            <p>Cats make good pets</p>
+        </div>
+    </div>
+</div>
+
+{% else %}
+  <p>You are not logged in, please login to see content.</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}
