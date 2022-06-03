@@ -9,8 +9,7 @@
 {% else %}
   <p>You are not logged in, please login to see content.</p>
   <a href="{% url 'login' %}">Log In</a>
-{% endif %}
-{% endblock %}
+
 <div class="section">
     <div class="pageitem">
         <div class="col">
@@ -32,4 +31,6 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% endblock %}
 
